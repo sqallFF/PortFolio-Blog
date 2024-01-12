@@ -10,8 +10,8 @@ export default function HomeProjectCard({media, title, postId}) {
   <div className="items-wrapper">
     <img src={media} alt="" className=''/>
     <div className="img-overlay"></div>
-    <div className="item-copy text-3xl">
-      <div className="item-name">
+    <div className="item-copy text-2xl sm:text-3xl">
+      <div>
         {title}
       </div>
     </div>

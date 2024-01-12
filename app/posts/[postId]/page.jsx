@@ -31,26 +31,25 @@ export default async function Post({params}) {
         return notFound()
     }
 
-    const {title, date, contentHtml , ogImage} = await getPostData(postId)
+    const {title, date, contentHtml ,subText, ogImage} = await getPostData(postId)
 
     const pubDate = getFormattedDate(date)
-    console.log(ogImage.url);
-
     
   return (
-    <main>
-        <div className='flex justify-between h-[90vh] px-28'>
-            <div className='flex flex-col justify-center'>
+    <main className='bg-white'>
+        <div className='flex flex-col sm:flex-row justify-center gap-x-9 sm:justify-between  h-[90vh] sm:px-4 lg:px-28 px-4'>
+            <div className='flex flex-col justify-center mb-8'>
                 <Link href={'/'}>Back</Link>
             </div>
-            <div className=' flex flex-col justify-center w-1/2 '>
+            <div className=' flex flex-col justify-center w-full sm:w-1/2 '>
                 <h3 className='text-3xl text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-900'>{title}</h3>
-                <h1 className='text-xl'>Highly Skilled, Relationship Focused, Capital Advisory</h1>
+                <h1 className='text-xl'>{subText}</h1>
+                <p>{pubDate}</p>
             </div>
         </div>
         <ScrollPostImg Img={ogImage.url}/>
-        <article className='mx-auto my-4'>
-            <section dangerouslySetInnerHTML={{ __html:contentHtml}} className='mx-auto px-10 text-xl' />
+        <article className='mx-12 my-24'>
+            <section dangerouslySetInnerHTML={{ __html:contentHtml}} className='mx-auto px-4 text-2xl' />
             <div className='flex justify-between h-[100vh] px-28'>
                 <Link href="/" className='flex flex-col justify-center'>Back to home</Link>
             </div>

@@ -44,22 +44,30 @@ export default function Filter({Techs , setActiveTag, activeTag, filtered, setFi
           const item4 = {
             click: { x: 30, rotate:["0deg","180deg"], transition:{ duration: .3,ease: "anticipate",}},
           }
+          const TapButton = {
+            initial: { background: "transparent", transition: {ease: [0.075, 0.82, 0.165, 1] } },
+            animate: { background: "transparent", transition: { duration: 3, ease: [0.075, 0.82, 0.165, 1] } },
+            tap: { background: "aliceblue", color:"black", transition: { duration: 3, ease: [0.075, 0.82, 0.165, 1] } }
+        };
   return (
     <>
   <div className=''>
     <motion.button
-     className='rounded-[50px] flex justify-center items-center align-middle font-bold text-lg px-3.5 text-center  w-[7vw] border-slate-200 border-2 mb-4' onClick={() =>{setShowStack(!showStack)}} whileTap="click" variants={container2}>
+     className='rounded-full flex justify-center items-center align-middle font-bold text-lg px-3.5 text-center   border-slate-200 border-2 mb-4' onClick={() =>{setShowStack(!showStack)}} whileTap="click" variants={container2}>
         Filter
         <motion.div variants={showStack ? item4 : item3} ><IoIosArrowDropdown/></motion.div>
         </motion.button>
     <AnimatePresence>
       {showStack && (
       <motion.div layout className={`overflow-hidden`} variants={container} initial='hidden' animate='show' exit='hidden'>
-        <motion.div variants={item} className='border-t-[1px] border-slate-200 '></motion.div>
+        <motion.div variants={item} className='border-t-[1px] border-slate-200 mt-7'></motion.div>
         <motion.div variants={item2} className='py-8 flex flex-wrap justify-center gap-4'>
           {Techs.map((Techs) =>{
               return(
-                  <motion.button className='rounded-[50px] font-bold  text-center py-[6px] pr-[20px] pl-[24px] border-slate-200 border-2 ' key={Techs.id} onClick={()=>(setActiveTag(Techs.id))}>{Techs.name}</motion.button>
+                  <motion.button         initial="initial"
+                  animate="animate"
+                  whileTap="tap"
+                  variants={TapButton}  className='rounded-[50px] font-bold  text-center py-[6px] pr-[20px] pl-[24px] border-slate-200 border-2 ' key={Techs.id} onClick={()=>(setActiveTag(Techs.id))}>{Techs.name}</motion.button>
               )
           })}
           </motion.div>
