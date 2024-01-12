@@ -18,7 +18,7 @@ onHoverEnd={e => {}}></motion.img>
 <h6 className='text-slate-400 mt-2 mb-1 text-base'>{FormattedDate}</h6>
 <h3 className=' my-1 text-2xl'>{title}</h3>
 <div className='flex items-center gap-4'>
-<Link href={`/posts/${id}`} className='py-4 text-lg'>Read More</Link>
+<Link href={`/posts/blogs/${id}`} className='py-4 text-lg'>Read More</Link>
 <ImArrowRight2/>
 </div>
 </div>
