@@ -12,7 +12,7 @@ export default function HomeCyberSection(Posts) {
 
   useEffect(() => {
     setInterval(() =>setCompleted(scrollXProgress.current *100 ))
-    }, [])
+    }, [scrollXProgress])
 
     const handleChange = (e) => {
         const element = ref.current

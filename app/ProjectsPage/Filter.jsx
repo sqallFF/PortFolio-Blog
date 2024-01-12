@@ -15,7 +15,7 @@ export default function Filter({Techs , setActiveTag, activeTag, filtered, setFi
 
       const filtered = Projects.filter((project) => project.contentId.includes(activeTag))
       setFiltered(filtered)
-    },[activeTag])
+    },[activeTag, Projects, setFiltered])
     
         const container = {
             hidden: {opacity:0, height:0, width:0, transition:{ when: 'afterChildren', duration: 0.5,staggerChildren: -0.2
