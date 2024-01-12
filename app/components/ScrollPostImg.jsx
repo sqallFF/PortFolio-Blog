@@ -14,7 +14,7 @@ useEffect(() => {
 }, [])
 
   return (
-    <div className='h-[80vh] overflow-hidden relative lg:h-[120vh]' ref={ref}>
+    <div className='h-[79vh] overflow-hidden relative lg:h-[120vh]' ref={ref}>
     <motion.img src={Img} alt='' className=' object-cover absolute w-full h-full inset-0' initial={{scale:1}} whileInView={{scale: (1)+(trackY/30)}} transition={{ ease: [0.075, 0.82, 0.165, 1]}}/>
 </div>
   )
