@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
 import {motion, useScroll} from 'framer-motion'
 export default function ScrollPostImg({Img}) {
-    const ref = useRef(null);
+    const ref = useRef();
 const {scrollYProgress}= useScroll({target: ref})
 
 const[trackY, setTrackY] = useState(0)
@@ -11,7 +11,7 @@ const[trackY, setTrackY] = useState(0)
 useEffect(() => {
     setInterval(() =>setTrackY(scrollYProgress.current ))
     console.log(scrollYProgress.current)
-}, [])
+}, [scrollYProgress])
 
   return (
     <div className='h-[79vh] overflow-hidden relative lg:h-[120vh]' ref={ref}>
