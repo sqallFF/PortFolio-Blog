@@ -55,7 +55,7 @@ function Menu({isOpen, setIsOpen}) {
            transition={{ease: "anticipate", duration: 2}}
             className='flex flex-col text-5xl sm:text-7xl justify-between h-full min-w-max '>
               {Links.map((link) =>(
-           <motion.div variants={item}className={`font-extrabold  ${ link.href == pathname ?' text-transparent  bg-clip-text bg-gradient-to-r from-green-300 to-blue-900' : 'blue-900'}`}>
+           <motion.div key={link.item} variants={item}className={`font-extrabold  ${ link.href == pathname ?' text-transparent  bg-clip-text bg-gradient-to-r from-green-300 to-blue-900' : 'blue-900'}`}>
            <Link className='menu__item-link z-20' href={link.href} onClick={() =>{setIsOpen(!isOpen)}}>{link.item}</Link>
            <div className='marquee z-0'>
              <div className="marquee__inner italic">
