@@ -1,4 +1,3 @@
-'use client'
 import Navbar from './components/MenuComponents/Navbar'
 import './globals.css'
 import {Darker_Grotesque} from 'next/font/google'
