@@ -19,7 +19,7 @@ export default function ScrollAnimation() {
     })}
     </motion.div>
 <motion.div style={{x: x1}} className="TechStack"  >
-    {Frameworks.toReversed().map((Framework, index)=>{
+    {Frameworks.map((Framework, index)=>{
         return <div key={index} className="">{Framework}</div>
     })}
     </motion.div>
